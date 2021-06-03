@@ -1,5 +1,6 @@
 var gameState = 0;
 var playerCount;
+var allPlayers;
 var database;
 var player;
 var game;
@@ -15,5 +16,12 @@ function setup(){
 }
 
 function draw(){
- background(150);
+  background(150);
+  if(playerCount === 4){
+    game.updateState(1);
+  }
+
+  if(gameState === 1){
+    game.play();
+  }
 }

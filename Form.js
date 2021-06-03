@@ -1,27 +1,34 @@
 class Form{
-
     constructor(){
-
+        this.title = createElement("h2");;
+        this.input = createInput("Name");
+        this.button = createButton("Play");
+        this.greeting = createElement("h2");
     }
 
     display(){
-        var title = createElement("h2");
-        title.html("Car Racing Game");
-        title.position(100,0);
-        var input = createInput("Name");
-        input.position(100,60);
-        var button = createButton("Play");
-        button.position(100,100);
-        button.mousePressed(function(){
-           input.hide();
-           button.hide();
-           var name = input.value();
+        this.title.html("Car Racing Game");
+        this.title.position(100,0);
+
+        this.input.position(100,60);
+
+        this.button.position(100,100);
+
+       // 'this' - keyword 
+       // arrow function- ()=>{}
+        this.button.mousePressed(()=>{
+        
+           this.input.hide();
+           this.button.hide();
+
+           player.name = this.input.value();
            playerCount += 1;
-           player.update(name);
+           player.index = playerCount
+           player.update();
            player.updateCount(playerCount);
-           var greeting = createElement("h2");
-           greeting.html("Welcome " + name);
-           greeting.position(700,0);
+
+           this.greeting.html("Welcome " + player.name);
+           this.greeting.position(700,0);
         })
     }
 }
