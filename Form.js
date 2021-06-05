@@ -6,13 +6,19 @@ class Form{
         this.greeting = createElement("h2");
     }
 
+    hide(){
+        this.input.hide();
+        this.button.hide();
+        this.greeting.hide();
+    }
+
     display(){
         this.title.html("Car Racing Game");
-        this.title.position(100,0);
+        this.title.position(550,0);
 
-        this.input.position(100,60);
+        this.input.position(550,60);
 
-        this.button.position(100,100);
+        this.button.position(550,100);
 
        // 'this' - keyword 
        // arrow function- ()=>{}
@@ -28,7 +34,7 @@ class Form{
            player.updateCount(playerCount);
 
            this.greeting.html("Welcome " + player.name);
-           this.greeting.position(700,0);
+           this.greeting.position(550,60);
         })
     }
 }
