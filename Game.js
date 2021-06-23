@@ -62,13 +62,18 @@ class Game {
         for(var plr in allPlayers){
             cars[index].x = x;
             cars[index].y = height-allPlayers[plr].distance;
-            //text(allPlayers[plr].name + " - " + allPlayers[plr].distance, 300,y )
+            
             x += 180;
+            //selecting current player
             if(index === player.index-1){
-                cars[index].shapeColor = "Red";
+                fill("Red")
+                ellipse(cars[index].x, cars[index].y, 110, 150)
                 camera.position.x = width/2;
-                camera.position.y = cars[index].y - height/2;
+                camera.position.y = cars[index].y - height/2 + 100;
             }
+            fill("White")
+            textAlign(CENTER);
+            text(allPlayers[plr].name,cars[index].x,cars[index].y - 80)
             index += 1;
         }
 

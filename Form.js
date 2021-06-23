@@ -4,6 +4,8 @@ class Form{
         this.input = createInput("Name");
         this.button = createButton("Play");
         this.greeting = createElement("h2");
+        this.endButton = createButton("Refresh");
+        //this.endButton.hide();
     }
 
     hide(){
@@ -19,6 +21,7 @@ class Form{
         this.input.position(550,60);
 
         this.button.position(550,100);
+        this.endButton.position(1200,50)
 
        // 'this' - keyword 
        // arrow function- ()=>{}
@@ -35,6 +38,12 @@ class Form{
 
            this.greeting.html("Welcome " + player.name);
            this.greeting.position(550,60);
+        })
+
+            this.endButton.mousePressed(()=>{
+            game.updateState(0);
+            player.updateCount(0);
+            window.location.reload();
         })
     }
 }
