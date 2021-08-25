@@ -3,6 +3,8 @@ class Player{
     this.name = null;
     this.distance = 0;
     this.index = null;
+    this.rank = null;
+    //To initalize a value we need to keep it as null
     }
 
     //to read the playerCount
@@ -21,6 +23,20 @@ class Player{
             allPlayers = data.val()     
         })
     }
+
+    static getCarsAtEnd(){
+        //var carDistanceRef = database.ref("players")
+        database.ref('CarsAtEnd').on("value", (data) =>{
+            this.rank = data.val();
+        })
+    }
+
+    static updateCarsAtEnd(rank){
+        database.ref('/').update({
+            CarsAtEnd: rank
+        })
+    }
+
 
     //update the playerCount in database
     updateCount(count){
